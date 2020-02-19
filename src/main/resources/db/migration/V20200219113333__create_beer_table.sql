@@ -1,6 +1,6 @@
 create table beer(
     id bigint auto_increment primary key,
-    external_id bigint,
+    external_id bigint unique,
     name varchar(255) not null,
     description varchar(1000)
 );

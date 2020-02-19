@@ -1,4 +1,4 @@
-package beer.entity;
+package com.example.dibchallenge.beer;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "beer")
+@Table(name = "com.example.dibchallenge.beer")
 public class BeerEntity {
 
     @Id

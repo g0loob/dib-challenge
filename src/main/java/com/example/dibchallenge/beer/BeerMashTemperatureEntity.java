@@ -1,4 +1,4 @@
-package beer.entity;
+package com.example.dibchallenge.beer;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

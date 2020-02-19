@@ -1,6 +1,5 @@
-package beer.service_impl;
+package com.example.dibchallenge.beer;
 
-import beer.service_api.BeerService;
 import org.springframework.stereotype.Service;
 
 @Service

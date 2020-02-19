@@ -1,4 +1,4 @@
-package beer.controller;
+package com.example.dibchallenge.beer;
 
 import org.springframework.web.bind.annotation.RestController;
 

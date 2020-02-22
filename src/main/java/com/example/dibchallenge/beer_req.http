@@ -1,0 +1,22 @@
+### Get beer by ID
+GET localhost:9000/beers/1
+
+### Get all beers from DB
+GET localhost:9000/beers
+
+### Insert up to 10 beers in DB
+POST localhost:9000/beers/insert
+
+### Delete beer by ID
+DELETE localhost:9000/beers/2
+
+
+# -------------------- Punk API -----------------------
+
+### Get random beer
+GET https://api.punkapi.com/v2/beers/random
+
+### Get beer by ID
+GET https://api.punkapi.com/v2/beers/175
+
+###

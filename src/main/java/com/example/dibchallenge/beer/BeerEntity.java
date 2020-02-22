@@ -9,6 +9,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,6 +72,18 @@ public class BeerEntity {
 
     public List<BeerMashTemperatureEntity> getTemperatures() {
         return temperatures;
+    }
+
+    public BigDecimal getMeanTemperature() {
+        if (getTemperatures().size() == 0) {
+            return BigDecimal.ZERO;
+        }
+
+        return getTemperatures()
+                .stream()
+                .map(BeerMashTemperatureEntity::getValue)
+                .reduce(BigDecimal.ZERO, BigDecimal::add)
+                .divide(BigDecimal.valueOf(getTemperatures().size()), RoundingMode.HALF_UP);
     }
 
     // TODO: add methods for adding/removing temperature

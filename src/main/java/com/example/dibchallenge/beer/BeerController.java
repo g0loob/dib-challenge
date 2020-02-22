@@ -30,22 +30,23 @@ public class BeerController {
     public ResponseEntity<Page<BeerDto>> getAll(
             @PageableDefault(page = 0, size = 50)
             @SortDefault(sort = "id", direction = Sort.Direction.ASC) Pageable pageable) {
-        return null;
+        return ResponseEntity.ok(beerService.getAll(pageable));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<BeerDto> getById(@PathVariable("id") Long id) {
-        return null;
+        return ResponseEntity.ok(beerService.getById(id));
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteById(@PathVariable("id") Long id) {
-        return null;
+        beerService.deleteById(id);
+        return ResponseEntity.noContent().build();
     }
 
     @PostMapping("/insert")
     public ResponseEntity<Long> insertBeers(
             @RequestParam(value = "numberOfBeers", required = false, defaultValue = "10") Long numberOfBeers) {
-        return null;
+        return ResponseEntity.ok(beerService.insertBeers(numberOfBeers));
     }
 }

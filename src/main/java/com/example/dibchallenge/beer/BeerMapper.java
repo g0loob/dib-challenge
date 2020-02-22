@@ -1,5 +1,6 @@
 package com.example.dibchallenge.beer;
 
+import com.example.dibchallenge.beer.strategy.BeerModel;
 import org.springframework.data.domain.Page;
 
 public class BeerMapper {
@@ -17,4 +18,11 @@ public class BeerMapper {
         return beerEntities.map(BeerMapper::toDto);
     }
 
+    public static BeerEntity toEntity(BeerModel beerModel) {
+        return new BeerEntity.Builder()
+                .setExternalId(beerModel.getId())
+                .setName(beerModel.getName())
+                .setDescription(beerModel.getDescription())
+                .build();
+    }
 }

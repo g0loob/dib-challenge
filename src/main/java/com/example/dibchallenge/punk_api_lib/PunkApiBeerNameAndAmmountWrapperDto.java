@@ -2,8 +2,8 @@ package com.example.dibchallenge.punk_api_lib;
 
 public class PunkApiBeerNameAndAmmountWrapperDto {
 
-    private String name;
-    private PunkApiBeerUnitAndValueDto amount;
+    protected String name;
+    protected PunkApiBeerUnitAndValueDto amount;
 
     public PunkApiBeerNameAndAmmountWrapperDto() {
     }

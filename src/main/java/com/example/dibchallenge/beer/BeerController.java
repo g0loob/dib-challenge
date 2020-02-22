@@ -26,16 +26,16 @@ public class BeerController {
         this.beerService = beerService;
     }
 
-    @GetMapping("/")
+    @GetMapping
     public ResponseEntity<Page<BeerDto>> getAll(
             @PageableDefault(page = 0, size = 50)
             @SortDefault(sort = "id", direction = Sort.Direction.ASC) Pageable pageable) {
-        return ResponseEntity.ok(beerService.getAll(pageable));
+        return ResponseEntity.ok(BeerMapper.toPageDto(beerService.getAll(pageable)));
     }
 
     @GetMapping("/{id}")
     public ResponseEntity<BeerDto> getById(@PathVariable("id") Long id) {
-        return ResponseEntity.ok(beerService.getById(id));
+        return ResponseEntity.ok(BeerMapper.toDto(beerService.getById(id)));
     }
 
     @DeleteMapping("/{id}")

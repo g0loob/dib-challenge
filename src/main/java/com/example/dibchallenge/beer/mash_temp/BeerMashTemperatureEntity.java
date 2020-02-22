@@ -13,7 +13,7 @@ import javax.persistence.Table;
 import java.math.BigDecimal;
 
 @Entity
-@Table(name = "beer_mash_temperature")
+@Table(name = "beer_mash_temperature", schema = "public")
 public class BeerMashTemperatureEntity {
 
     @Id
@@ -28,6 +28,11 @@ public class BeerMashTemperatureEntity {
     private BeerEntity beer;
 
     public BeerMashTemperatureEntity() {
+    }
+
+    public BeerMashTemperatureEntity(BigDecimal value, BeerEntity beerEntity) {
+        this.value = value;
+        this.beer = beerEntity;
     }
 
     public Long getId() {

@@ -17,7 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "com.example.dibchallenge.beer")
+@Table(name = "beer", schema = "public")
 public class BeerEntity {
 
     @Id
@@ -42,6 +42,12 @@ public class BeerEntity {
     private List<BeerMashTemperatureEntity> temperatures = new ArrayList<>();
 
     public BeerEntity() {
+    }
+
+    private BeerEntity(Long externalId, String name, String description) {
+        this.externalId = externalId;
+        this.name = name;
+        this.description = description;
     }
 
     public Long getId() {
@@ -74,6 +80,10 @@ public class BeerEntity {
 
     public List<BeerMashTemperatureEntity> getTemperatures() {
         return temperatures;
+    }
+
+    public void setTemperatures(List<BeerMashTemperatureEntity> temperatures) {
+        this.temperatures = temperatures;
     }
 
     public BigDecimal getMeanTemperature() {
@@ -118,4 +128,30 @@ public class BeerEntity {
                 ", description='" + description + '\'' +
                 '}';
     }
+
+    public static class Builder {
+        private Long externalId;
+        private String name;
+        private String description;
+
+        public Builder setExternalId(Long externalId) {
+            this.externalId = externalId;
+            return this;
+        }
+
+        public Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder setDescription(String description) {
+            this.description = description;
+            return this;
+        }
+
+        public BeerEntity build() {
+            return new BeerEntity(externalId, name, description);
+        }
+    }
+
 }

@@ -2,7 +2,7 @@ package com.example.dibchallenge.punk_api_lib;
 
 public class PunkApiBeerTempWrapperDto {
 
-    private PunkApiBeerUnitAndValueDto temp;
+    protected PunkApiBeerUnitAndValueDto temp;
 
     public PunkApiBeerTempWrapperDto() {
     }

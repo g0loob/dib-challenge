@@ -5,9 +5,9 @@ import org.springframework.data.domain.Pageable;
 
 public interface BeerService {
 
-    Page<BeerDto> getAll(Pageable pageable);
+    Page<BeerEntity> getAll(Pageable pageable);
 
-    BeerDto getById(Long id);
+    BeerEntity getById(Long id);
 
     void deleteById(Long id);
 

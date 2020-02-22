@@ -6,6 +6,6 @@ public interface BeerStrategy {
 
     BeerModel getRandomBeer();
 
-    List<BeerModel> getRandomBeers(int count);
+    List<BeerModel> getRandomBeers(long count);
 
 }

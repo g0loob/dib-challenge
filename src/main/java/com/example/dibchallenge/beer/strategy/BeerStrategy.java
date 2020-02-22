@@ -1,4 +1,4 @@
-package com.example.dibchallenge.beer;
+package com.example.dibchallenge.beer.strategy;
 
 import java.util.List;
 

@@ -1,5 +1,7 @@
 package com.example.dibchallenge.beer;
 
+import com.example.dibchallenge.beer.mash_temp.BeerMashTemperatureEntity;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;

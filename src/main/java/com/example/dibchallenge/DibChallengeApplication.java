@@ -1,6 +1,6 @@
 package com.example.dibchallenge;
 
-import com.example.dibchallenge.beer.PunkApiBeerStrategy;
+import com.example.dibchallenge.punk_api_lib.PunkApiBeerStrategy;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

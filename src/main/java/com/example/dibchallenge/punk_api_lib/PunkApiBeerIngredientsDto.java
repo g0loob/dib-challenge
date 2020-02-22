@@ -1,4 +1,4 @@
-package com.example.dibchallenge.beer.punk_api_lib;
+package com.example.dibchallenge.punk_api_lib;
 
 import java.util.List;
 

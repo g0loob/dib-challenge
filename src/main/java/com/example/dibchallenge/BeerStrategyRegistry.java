@@ -1,6 +1,6 @@
 package com.example.dibchallenge;
 
-import com.example.dibchallenge.beer.BeerStrategy;
+import com.example.dibchallenge.beer.strategy.BeerStrategy;
 import org.springframework.stereotype.Component;
 
 import java.lang.reflect.Constructor;

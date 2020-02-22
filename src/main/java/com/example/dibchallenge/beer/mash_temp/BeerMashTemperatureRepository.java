@@ -1,4 +1,4 @@
-package com.example.dibchallenge.beer;
+package com.example.dibchallenge.beer.mash_temp;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;

@@ -1,4 +1,6 @@
-package com.example.dibchallenge.beer;
+package com.example.dibchallenge.beer.mash_temp;
+
+import com.example.dibchallenge.beer.BeerEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

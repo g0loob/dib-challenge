@@ -1,6 +1,7 @@
-package com.example.dibchallenge.beer;
+package com.example.dibchallenge.punk_api_lib;
 
-import com.example.dibchallenge.beer.punk_api_lib.PunkApiBeerDto;
+import com.example.dibchallenge.beer.strategy.BeerModel;
+import com.example.dibchallenge.beer.strategy.BeerStrategy;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.ArrayList;

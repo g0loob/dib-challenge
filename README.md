@@ -12,9 +12,7 @@
 
 ### Tackling the problem
 
-The main idea was to separate all objects used for exposing API from objects used to consume 3rd-party API, because 
-on the first sight 3rd-party API is something that might change in the future, and it's a good practice to encapsulate 
-things that change. 
+The main idea was to separate all objects used for exposing API from objects used to consume 3rd-party API, because on the first sight 3rd-party API is something that might change in the future, and it's a good practice to encapsulate things that change. 
 
 Therefore, main package `com.example.dibchallenge` contains 2 packages:
 1. `beer` - containing everything related to beer entity and API that needs to be exposed
@@ -32,16 +30,13 @@ At the root there are:
 - Service (API) - methods provided by the service
 - ServiceImpl - implementation of service API
 
-All beer related config are stored in `beer.properties` file, and therefore there's a `BeerPropertiesConfig` class 
-in `config` package, so that we can use those properties in code (e.g. inject them).
+All beer related config are stored in `beer.properties` file, and therefore there's a `BeerPropertiesConfig` class in `config` package, so that we can use those properties in code (e.g. inject them).
 
 Every beer related exception in placed in `exception` package.
 
 `mash_temp` package contains Entity and Service for mash temperatures.
 
-`strategy` package contains 2 interfaces, `BeerModel` and `BeerStrategy`. `BeerModel` defines which properties are relevant 
-from 3rd-party API response, and `BeerStrategy` defines methods that need to be implemented when creating a beer "library" using 3rd-party API. 
-With this approach we can use whichever 3rd-party API for consuming beers. All we have to do is adapt its response to our needs.
+`strategy` package contains 2 interfaces, `BeerModel` and `BeerStrategy`. `BeerModel` defines which properties are relevant from 3rd-party API response, and `BeerStrategy` defines methods that need to be implemented when creating a beer "library" using 3rd-party API. With this approach we can use whichever 3rd-party API for consuming beers. All we have to do is adapt its response to our needs.
 
 #### `punk_api_lib` package
 
@@ -53,10 +48,8 @@ All exceptions are placed in `exception` package.
 
 ### What would I do differently ...
 
-- ... if I were given more time? I would probably try to optimize some things like DB calls, API calls or anything that I 
-find suspicious (there are some TODOs in code).
-- ... a second time around? Well, that would depend on discussion. At the moment I'm satisfied with solution and the time 
-would tell if it was the good one. As Don Roberts said: 
+- ... if I were given more time? I would probably try to optimize some things like DB calls, API calls or anything that I find suspicious (there are some TODOs in code). Maybe even experiment with unit/integration tests, since I've never had a chance to focus on that part of development process. And also, I could include swagger for API docs. 
+- ... a second time around? Well, that would depend on discussion about requirements. At the moment I'm satisfied with solution and the time would tell if it was the good one. As Don Roberts said: 
 > The first time you do something, you just do it. The second time you do something similar, you wince at the duplication, but you do the duplicate thing anyway. The third time you do something similar, you refactor.
 
 ### Playing with API
@@ -153,7 +146,7 @@ Response example:
 
 - Insert up to 10 beers in DB
 ```
-curl -X "POST" localhost:9000/beers/insert
+curl -X "POST" localhost:9000/beers/insert-from-punk-api
 ```
 
 Response example (number of beers inserted in DB):
@@ -165,7 +158,7 @@ Response example (number of beers inserted in DB):
 
 ##### IntelliJ IDEA IDE
 
-Package com.example.dibchallenge includes `beer_req.http` file which can be used from IntelliJ IDEA IDE to run HTTP(S) requests.
+Root of the project includes `beer_req.http` file which can be used from IntelliJ IDEA IDE to run HTTP(S) requests.
 
 ##### Postman
 

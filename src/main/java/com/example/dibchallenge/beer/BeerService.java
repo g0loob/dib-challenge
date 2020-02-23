@@ -11,6 +11,6 @@ public interface BeerService {
 
     void deleteById(Long id);
 
-    Long insertBeers(Long count);
+    Long insertBeersFromPunkApi(Long count);
 
 }

@@ -5,7 +5,7 @@ GET localhost:9000/beers/1
 GET localhost:9000/beers
 
 ### Insert up to 10 beers in DB
-POST localhost:9000/beers/insert
+POST localhost:9000/beers/insert-from-punk-api
 
 ### Delete beer by ID
 DELETE localhost:9000/beers/2

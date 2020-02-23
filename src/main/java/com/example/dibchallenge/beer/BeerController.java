@@ -44,9 +44,9 @@ public class BeerController {
         return ResponseEntity.noContent().build();
     }
 
-    @PostMapping("/insert")
+    @PostMapping("/insert-from-punk-api")
     public ResponseEntity<Long> insertBeers(
             @RequestParam(value = "numberOfBeers", required = false, defaultValue = "10") Long numberOfBeers) {
-        return ResponseEntity.ok(beerService.insertBeers(numberOfBeers));
+        return ResponseEntity.ok(beerService.insertBeersFromPunkApi(numberOfBeers));
     }
 }

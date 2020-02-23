@@ -62,19 +62,19 @@
 			"response": []
 		},
 		{
-			"name": "Insert up to N beers in DB",
+			"name": "Insert up to 10 beers in DB",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"url": {
-					"raw": "localhost:9000/beers/insert",
+					"raw": "localhost:9000/beers/insert-from-punk-api",
 					"host": [
 						"localhost"
 					],
 					"port": "9000",
 					"path": [
 						"beers",
-						"insert"
+						"insert-from-punk-api"
 					]
 				}
 			},

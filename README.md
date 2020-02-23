@@ -48,11 +48,14 @@ All exceptions are placed in `exception` package.
 
 ### What would I do differently ...
 
-- ... if I were given more time? I would probably try to optimize some things like DB calls, API calls or anything that I find suspicious (there are some TODOs in code). Maybe even experiment with unit/integration tests, since I've never had a chance to focus on that part of development process. And also, I could include swagger for API docs. 
+- ... if I were given more time? I would probably try to optimize some things like DB calls, API calls or anything that I find suspicious (there are some TODOs in code). Maybe even experiment with unit/integration tests, since I've never had a chance to focus on that part of development process. 
 - ... a second time around? Well, that would depend on discussion about requirements. At the moment I'm satisfied with solution and the time would tell if it was the good one. As Don Roberts said: 
 > The first time you do something, you just do it. The second time you do something similar, you wince at the duplication, but you do the duplicate thing anyway. The third time you do something similar, you refactor.
 
 ### Playing with API
+
+When server is **running**, API documentation is available on [localhost:9000/swagger-ui.html](http://localhost:9000
+/swagger-ui.html).
 
 ##### cURL
 

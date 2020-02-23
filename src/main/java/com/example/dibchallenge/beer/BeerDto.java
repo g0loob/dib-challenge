@@ -1,15 +1,21 @@
 package com.example.dibchallenge.beer;
 
+import io.swagger.annotations.ApiModelProperty;
+
 import java.math.BigDecimal;
 
 public class BeerDto {
 
+    @ApiModelProperty("The database generated beer ID.")
     private Long id;
 
+    @ApiModelProperty("The beer name.")
     private String name;
 
+    @ApiModelProperty("The beer description.")
     private String description;
 
+    @ApiModelProperty("The average temperature of beer's mash temperatures.")
     private BigDecimal meanTemperature;
 
     public BeerDto() {

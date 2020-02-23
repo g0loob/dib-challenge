@@ -1,5 +1,9 @@
 package com.example.dibchallenge.beer;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+@Api(value="Beer management")
 @RestController
 @RequestMapping("/beers")
 public class BeerController {
@@ -26,6 +31,8 @@ public class BeerController {
         this.beerService = beerService;
     }
 
+    @ApiOperation(value = "Get page of beers.", response = Page.class)
+    @ApiResponse(code = 200, message = "OK")
     @GetMapping
     public ResponseEntity<Page<BeerDto>> getAll(
             @PageableDefault(page = 0, size = 50)
@@ -33,17 +40,26 @@ public class BeerController {
         return ResponseEntity.ok(BeerMapper.toPageDto(beerService.getAll(pageable)));
     }
 
+    @ApiOperation(value = "Get beer by ID.", response = BeerDto.class)
+    @ApiResponses(value = {
+            @ApiResponse(code = 200, message = "OK"),
+            @ApiResponse(code = 404, message = "Beer not found!")
+    })
     @GetMapping("/{id}")
     public ResponseEntity<BeerDto> getById(@PathVariable("id") Long id) {
         return ResponseEntity.ok(BeerMapper.toDto(beerService.getById(id)));
     }
 
+    @ApiOperation("Remove beer by ID.")
+    @ApiResponse(code = 204, message = "No Content")
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteById(@PathVariable("id") Long id) {
         beerService.deleteById(id);
         return ResponseEntity.noContent().build();
     }
 
+    @ApiOperation("Insert beers from Punk API.")
+    @ApiResponse(code = 200, message = "OK")
     @PostMapping("/insert-from-punk-api")
     public ResponseEntity<Long> insertBeers(
             @RequestParam(value = "numberOfBeers", required = false, defaultValue = "10") Long numberOfBeers) {

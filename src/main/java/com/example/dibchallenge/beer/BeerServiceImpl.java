@@ -1,12 +1,12 @@
 package com.example.dibchallenge.beer;
 
-import com.example.dibchallenge.BeerStrategyRegistry;
 import com.example.dibchallenge.beer.exception.BeerNotFoundException;
 import com.example.dibchallenge.beer.mash_temp.BeerMashTemperatureEntity;
 import com.example.dibchallenge.beer.mash_temp.BeerMashTemperatureService;
 import com.example.dibchallenge.beer.strategy.BeerModel;
 import com.example.dibchallenge.beer.strategy.BeerStrategy;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -27,15 +27,15 @@ public class BeerServiceImpl implements BeerService {
 
     private final BeerRepository beerRepository;
     private final BeerMashTemperatureService beerMashTemperatureService;
-    private BeerStrategy punkApiBeerStrategy;
+    private final BeerStrategy punkApiBeerStrategy;
 
     @Autowired
     public BeerServiceImpl(
-            BeerStrategyRegistry beerStrategyRegistry,
+            @Qualifier("punkApiBeerStrategy") BeerStrategy beerStrategy,
             BeerRepository beerRepository,
             BeerMashTemperatureService beerMashTemperatureService) {
         this.beerRepository = beerRepository;
-        this.punkApiBeerStrategy = beerStrategyRegistry.get(BeerStrategyRegistry.RegistryKeys.PUNK_API_BEER);
+        this.punkApiBeerStrategy = beerStrategy;
         this.beerMashTemperatureService = beerMashTemperatureService;
     }
 

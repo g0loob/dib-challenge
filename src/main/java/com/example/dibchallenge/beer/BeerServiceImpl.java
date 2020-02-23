@@ -55,7 +55,9 @@ public class BeerServiceImpl implements BeerService {
     @Override
     @Transactional
     public void deleteById(Long id) {
-        beerRepository.deleteById(id);
+        if (beerRepository.existsById(id)) {
+            beerRepository.deleteById(id);
+        }
     }
 
     @Override

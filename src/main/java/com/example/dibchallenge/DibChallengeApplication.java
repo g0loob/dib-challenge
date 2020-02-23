@@ -24,7 +24,7 @@ public class DibChallengeApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
-		LOG.info("beans={}", Arrays.asList(applicationContext.getBeanDefinitionNames()));
+//		LOG.info("beans={}", Arrays.asList(applicationContext.getBeanDefinitionNames()));
 	}
 
 }

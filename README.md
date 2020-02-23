@@ -173,7 +173,7 @@ In the root of project there's a Postman collection `DibChallenge.postman_collec
 
 ### Running the project
 
-Thanks to the Spring Boot, starting the project is as easy as (assuming you are at the root of the project):
+Thanks to the Spring Boot, starting the project is as easy as pie (assuming you are at the root of the project):
 
 ```
 ./mvnw spring-boot:run

@@ -2,6 +2,7 @@ package com.example.dibchallenge.beer;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiParam;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-@Api(value="Beer management")
+@Api(value="Beer management", tags = "Beer controller")
 @RestController
 @RequestMapping("/beers")
 public class BeerController {
@@ -62,6 +63,7 @@ public class BeerController {
     @ApiResponse(code = 200, message = "OK")
     @PostMapping("/insert-from-punk-api")
     public ResponseEntity<Long> insertBeers(
+            @ApiParam(value = "Number of beers to insert in DB.", required = false)
             @RequestParam(value = "numberOfBeers", required = false, defaultValue = "10") Long numberOfBeers) {
         return ResponseEntity.ok(beerService.insertBeersFromPunkApi(numberOfBeers));
     }

@@ -1,9 +1,11 @@
 package com.example.dibchallenge.beer;
 
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 import java.math.BigDecimal;
 
+@ApiModel("Simple beer object.")
 public class BeerDto {
 
     @ApiModelProperty("The database generated beer ID.")

@@ -64,7 +64,7 @@ public class BeerServiceImpl implements BeerService {
     @Transactional
     public Long insertBeersFromPunkApi(Long count) {
         long numberOfBeersInDb = beerRepository.count();
-        long numberOfBeersToStoreInDB = maxNumberOfBeersToInsertInDb - numberOfBeersInDb;
+        long numberOfBeersToStoreInDB = Math.min(maxNumberOfBeersToInsertInDb - numberOfBeersInDb, count);
         long numberOfBeersSavedInDB = numberOfBeersToStoreInDB;
 
         while (numberOfBeersToStoreInDB > 0L) {

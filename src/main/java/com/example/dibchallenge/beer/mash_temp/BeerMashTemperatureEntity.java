@@ -54,4 +54,23 @@ public class BeerMashTemperatureEntity {
     public void setBeer(BeerEntity beer) {
         this.beer = beer;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+
+        if (!(o instanceof BeerMashTemperatureEntity))
+            return false;
+
+        BeerMashTemperatureEntity other = (BeerMashTemperatureEntity) o;
+
+        return id != null &&
+                id.equals(other.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return 31;
+    }
+
 }

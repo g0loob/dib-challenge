@@ -68,7 +68,7 @@ public class BeerServiceImpl implements BeerService {
         long numberOfBeersSavedInDB = numberOfBeersToStoreInDB;
 
         while (numberOfBeersToStoreInDB > 0L) {
-            Map<Long, BeerModel> randomBeers = getRandomBeers(numberOfBeersToStoreInDB); // TODO: better method name for this return type
+            Map<Long, BeerModel> randomBeers = getRandomBeersThatAreNotInDB(numberOfBeersToStoreInDB); // TODO: hint in method name that returns Map
             numberOfBeersToStoreInDB -= randomBeers.keySet().size();
 
             List<BeerEntity> beerEntitiesToSave = new ArrayList<>();
@@ -85,7 +85,7 @@ public class BeerServiceImpl implements BeerService {
         return numberOfBeersSavedInDB;
     }
 
-    private Map<Long, BeerModel> getRandomBeers(long count) {
+    private Map<Long, BeerModel> getRandomBeersThatAreNotInDB(long count) {
         Map<Long, BeerModel> randomBeers = punkApiBeerStrategy.getRandomBeers(count)
                 .stream()
                 .collect(Collectors.toMap(BeerModel::getId, b -> b, (b1, b2) -> b1));

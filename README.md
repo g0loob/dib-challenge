@@ -30,9 +30,10 @@ At the root there are:
 - Service (API) - methods provided by the service
 - ServiceImpl - implementation of service API
 
-All beer related config are stored in `beer.properties` file, and therefore there's a `BeerPropertiesConfig` class in `config` package, so that we can use those properties in code (e.g. inject them).
+All beer related configs are stored in `beer.properties` file, and therefore there's a `BeerPropertiesConfig` class
+ in `config` package, so that we can use those properties in code (e.g. inject them).
 
-Every beer related exception in placed in `exception` package.
+Every beer related exception is placed in `exception` package.
 
 `mash_temp` package contains Entity and Service for mash temperatures.
 
@@ -48,14 +49,13 @@ All exceptions are placed in `exception` package.
 
 ### What would I do differently ...
 
-- ... if I were given more time? I would probably try to optimize some things like DB calls, API calls or anything that I find suspicious (there are some TODOs in code). Maybe even experiment with unit/integration tests, since I've never had a chance to focus on that part of development process. 
+- ... if I were given more time? I would probably try to optimize some things like DB calls, API calls or anything that I find suspicious (there are some TODOs in code). Perhaps, practice Spring Security or test the limits of Punk API to see is there something that can happen unexpectedly. Maybe even experiment with unit/integration tests, since I've never had a chance to focus on that part of development process. 
 - ... a second time around? Well, that would depend on discussion about requirements. At the moment I'm satisfied with solution and the time would tell if it was the good one. As Don Roberts said: 
 > The first time you do something, you just do it. The second time you do something similar, you wince at the duplication, but you do the duplicate thing anyway. The third time you do something similar, you refactor.
 
 ### Playing with API
 
-When server is **running**, API documentation is available on [localhost:9000/swagger-ui.html](http://localhost:9000
-/swagger-ui.html).
+When server is **running**, API documentation is available on [localhost:9000/swagger-ui.html](http://localhost:9000/swagger-ui.html).
 
 ##### cURL
 
@@ -169,7 +169,7 @@ In the root of project there's a Postman collection `DibChallenge.postman_collec
 
 ### Running the project
 
-Thanks to the Spring Boot, starting the project is as easy as pie (assuming you are at the root of the project):
+Thanks to the Spring Boot, starting the project is as easy as (assuming you are at the root of the project):
 
 ```
 ./mvnw spring-boot:run
